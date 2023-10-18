@@ -1,0 +1,61 @@
+<div><SCRIPT> document.write("Изменено " +document.lastModified) </SCRIPT> </div>
+<div><INPUT type="button" value="Window" style="position: relative; top: 30px; right:0px; width: 80px; height: 30px; background-color: rgb(247, 153, 153);" OnClick="WindStat()"></div>
+<div><INPUT type="button" value="Navigator" style="position: relative; top: 0px; right:-100px; width: 80px; height: 30px; background-color: rgb(216, 153, 247);" 
+OnClick=" alert('Тип браузера: '+ navigator.appCodeName + '\n' +
+                          'Название браузера: ' + navigator.appName + '\n' +
+                          'Версия браузера: ' + navigator.appVersion + '\n' +
+                          'Платформа: ' + navigator.platform + '\n' +
+                          'Язык браузера: ' + navigator.language + '\n');"></div>
+<div><INPUT type="button" value="Location" style="position: relative; top: 30px; right:0px; width: 80px; height: 30px; background-color: rgb(163, 153, 247);" 
+		     OnClick="alert('Имя пользователя: ' + window.navigator.userAgent + '\n' +
+                    'Адрес загруженного документа: ' + window.location.href);"></div>
+<div><INPUT type="button" value="Screen" style="position: relative; top: 0px; right:-100px; width: 80px; height: 30px; background-color: rgb(153, 247, 213);" OnClick="Scren()"></div>
+<script>
+    function WindStat() {
+     alert("Текущая строка состояния: " + window.status);
+     window.status = "WinStatus is " + Math.floor(Math.random()* 100);
+    }
+</script>
+<script>
+function Scren() {
+      var screenInfo = "Ширина: " + window.screen.width + "\n" +
+                       "Высота: " + window.screen.height + "\n" +
+                       "Глубина цвета: " + window.screen.colorDepth + "\n" +
+                       "Ориентация: " + (window.screen.orientation.type);
+      var isConfirmed = confirm("Информация о параметрах экрана:\n\n" + screenInfo);
+	if (isConfirmed) {
+        alert(screenInfo);}
+}
+</script>
+<script>
+    function changeStat() {
+     window.status = "Читай текст!";
+     alert("Текущая строка состояния: " + window.status);
+    }
+</script>
+<script>
+    function change() {
+     window.status = "Продолжение работы";
+    }
+</script>
+<script>
+function changeParagraphStyle(element) {
+      element.style.marginRight = "3cm"; 
+      element.style.textIndent = "2.5cm"; 
+    }
+    function restoreParagraphStyle(element) {
+      element.style.marginRight = "";
+      element.style.textIndent = ""; 
+    }
+</script>
+ <script>
+    // Функция для применения альтернативного стиля при наведении мыши
+    function applyAlternativeStyle(cell) {
+      cell.className = "alternative";
+    }
+
+    // Функция для восстановления исходного стиля при отведении мыши
+    function restoreNormalStyle(cell) {
+      cell.className = "normal";
+    }
+  </script>

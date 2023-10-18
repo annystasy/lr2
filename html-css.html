@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Котики</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <style>
+    .normal {
+      background-color: #fff; 
+      color: #000; 
+      font-weight: normal; 
+    }
+    .alternative {
+      background-color: rgb(145, 32, 153); 
+      color: #fff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div><img src="image.jpg" name="pic1" id="img1" style="position:absolute; top:520px; left: 900px; width:150; height:150; z-index: 0; "></div>
+<div><img src="image2.jpg" name="pic3" id="img3"  style="position:absolute; top:540px; left: 1100px; width:150; height:150; z-index: 2; "></div>
+<div><img src="image1.jpg" name="pic2" id="img2" style="position:absolute; top:530px; left: 1000px; width:150; height:150; z-index: 1; "></div>
+<div><INPUT type="button" value="AnVisible" style="position:absolute; top: 700px; left: 900px; width: 70; height: 30; background-color: rgb(153, 153, 153);" OnClick="pic2.style.visibility='hidden';"></div>
+<div><INPUT type="button" value="Visible" style="position:absolute; top: 700px; left: 1000px; width: 70; height: 30; background-color: rgb(153, 153, 153);" OnClick="pic2.style.visibility='visible'"></div>
+<div><INPUT type="button" value="rename" style="position:absolute; top: 700px; left: 1100px; width: 70; height: 30; background-color: rgb(153, 153, 153);" OnClick="var buf =pic1.style.zIndex;pic1.style.zIndex=pic3.style.zIndex; pic3.style.zIndex=buf "></div>
+&nbsp;<div class="text">
+    <main>
+       <h1 onMouseOver="changeStat()" onmouseout="change()">Котики</h1>
+        <p onMouseOver="style='color: rgb(31, 117, 254); font-weight: bold;'" onMouseOut="style='color: #000; font-weight: normal;'">Котики - это лучшее, что у нас есть.В настоящее время в мире насчитывается около 600 млн домашних кошек, выведено около 200 пород, от длинношёрстных до лишённых шерсти, признанных и зарегистрированных различными фелинологическими организациями. На протяжении 10 000 лет кошки ценятся человеком, в том числе за способность охотиться на грызунов и других домашних вредителей, а также за умение забавлять и утешать детей.</p>
+        </details>&nbsp;<h2>Котики в истории</h2>
+          <p onmouseover="changeParagraphStyle(this)" onmouseout="restoreParagraphStyle(this)" class="news">Главный мышелов правительственной резиденции</p>
+          <p class="news">Индия - кошка Джоша Буша</p>
+          <p class="news">Муизза - кошка пророка Мухаммеда</p>
+          <p class="news">Непотопляемый Сэм - корабельный кот, который пережил крушение трёх своих кораблей</p>
+          <p class="news">Оранджи - кот-кинозвезда</p>
+          <p class="news">Сокс был любимым питомцем семьи президента США Билла Клинтона</p>
+          <p class="news">Фред прославился тем, что работал в департаменте полиции Нью-Йорка и помог разоблачить несколько преступников.</p>
+          <p class="news">Эрмитажные коты официально содержатся на территории музея со времени его постройки в целях предотвращения интенсивного размножения крыс и мышей.</p>
+    
+<table border="1" width="600">
+        <tr>
+          <td onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка 1</td>
+          <td onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка 2</td>
+        </tr>
+        <tr>
+          <td onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка 3</td>
+          <td onmouseover="applyAlternativeStyle(this)" onmouseout="restoreNormalStyle(this)">Ячейка 4</td>
+        </tr>
+</table>
+</main>
+  </div>
+<div><SCRIPT> document.write("Изменено " +document.lastModified) </SCRIPT> </div>
+<div><INPUT type="button" value="Window" style="position: relative; top: 30px; right:0px; width: 80px; height: 30px; background-color: rgb(247, 153, 153);" OnClick="WindStat()"></div>
+<div><INPUT type="button" value="Navigator" style="position: relative; top: 0px; right:-100px; width: 80px; height: 30px; background-color: rgb(216, 153, 247);" 
+OnClick=" alert('Тип браузера: '+ navigator.appCodeName + '\n' +
+                          'Название браузера: ' + navigator.appName + '\n' +
+                          'Версия браузера: ' + navigator.appVersion + '\n' +
+                          'Платформа: ' + navigator.platform + '\n' +
+                          'Язык браузера: ' + navigator.language + '\n');"></div>
+<div><INPUT type="button" value="Location" style="position: relative; top: 30px; right:0px; width: 80px; height: 30px; background-color: rgb(163, 153, 247);" 
+		     OnClick="alert('Имя пользователя: ' + window.navigator.userAgent + '\n' +
+                    'Адрес загруженного документа: ' + window.location.href);"></div>
+<div><INPUT type="button" value="Screen" style="position: relative; top: 0px; right:-100px; width: 80px; height: 30px; background-color: rgb(153, 247, 213);" OnClick="Scren()"></div>
+<script>
+    function WindStat() {
+     alert("Текущая строка состояния: " + window.status);
+     window.status = "WinStatus is " + Math.floor(Math.random()* 100);
+    }
+</script>
+<script>
+function Scren() {
+      var screenInfo = "Ширина: " + window.screen.width + "\n" +
+                       "Высота: " + window.screen.height + "\n" +
+                       "Глубина цвета: " + window.screen.colorDepth + "\n" +
+                       "Ориентация: " + (window.screen.orientation.type);
+      var isConfirmed = confirm("Информация о параметрах экрана:\n\n" + screenInfo);
+	if (isConfirmed) {
+        alert(screenInfo);}
+}
+</script>
+<script>
+    function changeStat() {
+     window.status = "Читай текст!";
+     alert("Текущая строка состояния: " + window.status);
+    }
+</script>
+<script>
+    function change() {
+     window.status = "Продолжение работы";
+    }
+</script>
+<script>
+function changeParagraphStyle(element) {
+      element.style.marginRight = "3cm"; 
+      element.style.textIndent = "2.5cm"; 
+    }
+    function restoreParagraphStyle(element) {
+      element.style.marginRight = "";
+      element.style.textIndent = ""; 
+    }
+</script>
+ <script>
+    // Функция для применения альтернативного стиля при наведении мыши
+    function applyAlternativeStyle(cell) {
+      cell.className = "alternative";
+    }
+
+    // Функция для восстановления исходного стиля при отведении мыши
+    function restoreNormalStyle(cell) {
+      cell.className = "normal";
+    }
+  </script>
+</body>
+</html>
